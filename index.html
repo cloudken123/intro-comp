@@ -12,6 +12,14 @@
       href="./images/favicon-32x32.png"
     />
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <title>Frontend Mentor | Intro component with sign up form</title>
     <link rel="stylesheet" href="./styles.css" />
     <script src="./app.js" defer></script>
@@ -32,15 +40,37 @@
         <form action="" id="form">
           <label for="firstName">
             <input type="text" class="firstName" placeholder="First Name" />
+            <p class="firstName-error-text" id="firstname-error-text">
+              First name cannot be empty
+            </p>
           </label>
           <label for="lastName">
             <input type="text" class="lastName" placeholder="Last Name" />
+            <p class="lastname-error-text" id="lastname-error-text">
+              Last name cannot be empty
+            </p>
           </label>
           <label for="email">
-            <input type="email" class="email" placeholder="Email" />
+            <input type="text" class="email" placeholder="Email" />
+            <p class="email-error-text" id="email-error-text"></p>
           </label>
           <label for="password">
-            <input type="password" class="password" placeholder="Password" />
+            <div class="password-and-icon-conatainer">
+              <input type="password" class="password" placeholder="Password" />
+              <i
+                class="fa-regular fa-eye-slash"
+                id="show-password"
+                onclick="revealPassword()"
+              ></i>
+              <i
+                class="fa-regular fa-eye"
+                id="hidepassword"
+                onclick="revealPassword()"
+              ></i>
+            </div>
+            <p class="password-error-text" id="password-error-text">
+              Password cannot be empty
+            </p>
           </label>
           <button id="button">Claim your free trial</button>
           <small
